@@ -1,0 +1,497 @@
+#include "Table_t.h"
+
+const string Table_t::SortingSign::INC_SORT_SIGN = " \x1e";
+
+const string Table_t::SortingSign::DEC_SORT_SIGN = " \x1f";
+
+const string Table_t::SortingSign::NONE_SORT_SIGN = "\x1e\x1f";
+
+const string Table_t::DEFAULT_TEMP_FILE_FULLTABLE_PATH = "fullTable.txt";
+
+const Table_t::TableStyle Table_t::style = {'\xCD', '\xBA', {'\xC9', '\xCB', '\xBB'}, {'\xC8', '\xCA', '\xBC'}, {'\xC8', '\xCF', '\xBC'}};
+
+Table_t::Table_t()
+: Rect_t(),
+  nColumn(0),
+  transactCounter(0),
+  pnFilter(this),
+  currentSortingSign(NULL),
+  tfFindFocus(false),
+  canUpdataBackUpDataFlag(true) {}
+
+Table_t::Table_t(int l, int t, int lineNum, const Vector<string>& _headers)
+: Table_t(l, t, 0, lineNum, _headers) {}
+
+Table_t::Table_t(int l, int t, int keyId,  int lineNum, const Vector<string>& _headers)
+: Rect_t(l, t),
+  nColumn(_headers.size()),
+  keyIndex(keyId),
+  transactCounter(0),
+  headers(_headers),
+  tableView(BorderFactory::DOUBLE, l, t + 3, lineNum, Vector<string>()),
+  currentSortingSign(NULL),
+  tfFindFocus(false),
+  canUpdataBackUpDataFlag(true),
+  pnFilter(this) {
+
+  columnWidth.resize(nColumn);
+  for (int i = 0; i < nColumn; ++i)
+    columnWidth[i] = _headers[i].size() + 5;
+
+  sortingSignList.resize(nColumn, NULL);
+
+  int nextLeft = left;
+  for (int i = 0; i < nColumn; ++i) {
+    nextLeft += 1 + columnWidth[i];
+    sortingSignList[i] = new SortingSign(nextLeft - 2, top + 2);
+  }
+  currentSortingSign = sortingSignList[keyIndex];
+
+  savePortLineNum = lineNum;
+}
+
+int Table_t::getRowIndexByKey(const string& keyValue) {
+  for (int i = 0; i < backUpRows.size(); ++i) {
+    if (backUpRows[i][keyIndex] == keyValue)
+      return i;
+  }
+  return -1;
+}
+
+void Table_t::clearTransactBuffer() {
+  if (transactCounter <= MAX_BUFFER_RECORD) return;
+  transactBuffer = Stack<Transact *>();
+  transactCounter = 0;
+}
+
+string Table_t::getRows(int id) {
+  assert(0 <= id && id < rows.size());
+
+  stringstream line;
+  for (int i = 0; i < nColumn; ++i) {
+    string text = rows[id][i];
+    StringUtility::adjustStringToFit(text, columnWidth[i]);
+    size_t remaining = columnWidth[i] - text.size();
+    size_t half = ceil(remaining / 2);
+    line << string(half, ' ') << text << string(remaining - half, ' ');
+    if (i != nColumn - 1)
+      line << style.vertical;
+  }
+  return line.str();
+}
+
+void Table_t::setDefaultColor() {
+  setColor(DEFAULT_TABLE_ATTRIBUTES);
+  tableView.setColor(DEFAULT_UNFOCUS_ROW_ATTRIBUTES);
+  tableView.setColorEle(DEFAULT_FOCUS_ROW_ATTRIBUTES, DEFAULT_UNFOCUS_ROW_ATTRIBUTES);
+  lbFind.setColor(this->attribute);
+  btnDetail.setColor(DEFAULT_BUTTON_UNFOCUS_ATTRIBUTES);
+  btnFilter.setColor(DEFAULT_BUTTON_UNFOCUS_ATTRIBUTES);
+  btnFullTable.setColor(DEFAULT_BUTTON_UNFOCUS_ATTRIBUTES);
+}
+
+void Table_t::setFirstSelected() {
+  tableView.setFirstSelected();
+}
+
+void Table_t::setFixedWidths(const Vector<size_t>& widths) {
+  for (int i = 0; i < widths.size(); ++i)
+    if (widths[i] < headers[i].size() + 5)
+      return;
+  columnWidth = widths;
+}
+
+Vector<string> Table_t::getColumnValueList(int columnId) {
+  assert(0 <= columnId && columnId < nColumn);
+
+  Vector<string> res;
+  for (int i = 0; i < rows.size(); ++i)
+    res.push_back(rows[i][columnId]);
+  return res;
+}
+
+void Table_t::clearAll() {
+  clearTransactBuffer();
+
+  transactBuffer.push(new DeleteAllTransact(rows));
+  ++transactCounter;
+  rows.clear();
+}
+
+void Table_t::setData(const Vector<Vector<string> >& newData) {
+//  assert(newData.empty() == false);
+  assert(newData[0].size() == nColumn);
+
+//  clearTransactBuffer();
+  backUpRows = newData;
+  //back up
+  rows = backUpRows;
+
+  updateSortingSignList();
+  currentSortingSign = sortingSignList[keyIndex];
+  currentSortingSign->state = 1;
+  currentSortingSign->setValue(SortingSign::INC_SORT_SIGN);
+  currentSortingSign->setColor(SortingSign::INC_SORT_ATTRIBUTES);
+  sort(keyIndex);
+
+//  transactBuffer.push(new SetNewDataTransact());
+//  ++transactCounter;
+}
+
+int Table_t::getSelectedIndex() {
+  return tableView.getSelectedIndex();
+}
+
+Vector<string> Table_t::getSelectedValue() {
+  return backUpRows[tableView.getSelectedIndex()];
+}
+
+void Table_t::insertRow(const Vector<string>& newRow) {
+  assert(newRow.size() == nColumn);
+
+  clearTransactBuffer();
+  rows.push_back(newRow);
+
+  //
+  tableView.insertNewItem(getRows(rows.size() - 1));
+  tableView.draw(*Graphics::getCurrentActiveGraphics());
+  Rect_t::setFocus(tableView);
+
+  transactBuffer.push(new AddOneRowTransact(rows.size() - 1));
+  ++transactCounter;
+}
+
+void Table_t::insertRowByIndex(int id, const Vector<string>& newRow) {
+  assert(0 <= id && id < rows.size() && newRow.size() == nColumn);
+
+  clearTransactBuffer();
+  rows.insert(id, newRow);
+
+  //
+  tableView.insertNewItem(id, getRows(id));
+  tableView.draw(*Graphics::getCurrentActiveGraphics());
+  Rect_t::setFocus(tableView);
+
+  transactBuffer.push(new AddOneRowTransact(id));
+  ++transactCounter;
+}
+
+void Table_t::removeRowByIndex(int id) {
+  assert(0 <= id && id < rows.size());
+
+  clearTransactBuffer();
+
+  //
+  tableView.deleteItem(id);
+  tableView.draw(*Graphics::getCurrentActiveGraphics());
+  Rect_t::setFocus(tableView);
+
+  transactBuffer.push(new DeleteOneRowTransact(id, rows[id]));
+  ++transactCounter;
+  rows.remove(id);
+}
+
+void Table_t::removeRowByKey(const string& keyValue) {
+  clearTransactBuffer();
+
+  for (int i = 0; i < backUpRows.size(); ++i) {
+    if (backUpRows[i][keyIndex] == keyValue) {
+      tableView.deleteItem(i);
+      tableView.draw(*Graphics::getCurrentActiveGraphics());
+      Rect_t::setFocus(tableView);
+
+      transactBuffer.push(new DeleteOneRowTransact(i, backUpRows[i]));
+      ++transactCounter;
+      backUpRows.remove(i);
+      return;
+    }
+  }
+}
+
+void Table_t::updateRowByIndex(int id, const Vector<string>& newRow) {
+  assert(0 <= id && id < rows.size());
+  assert(newRow.size() == nColumn);
+
+  clearTransactBuffer();
+
+  transactBuffer.push(new UpdateRowTransact(id, rows[id]));
+  ++transactCounter;
+
+  rows[id] = newRow;
+
+  //
+  tableView.replaceItem(id, getRows(id));
+  tableView.draw(*Graphics::getCurrentActiveGraphics());
+  Rect_t::setFocus(tableView);
+}
+
+void Table_t::updateRowByKey(const string& key, const Vector<string>& newRow) {
+  assert(newRow.size() == nColumn);
+
+  for (int i = 0; i < backUpRows.size(); ++i) {
+    if (backUpRows[i][keyIndex] == key) {
+      transactBuffer.push(new UpdateRowTransact(i, backUpRows[i]));
+      ++transactCounter;
+
+      backUpRows[i] = newRow;
+
+      //
+      tableView.replaceItem(i, getRows(i));
+      tableView.draw(*Graphics::getCurrentActiveGraphics());
+      Rect_t::setFocus(tableView);
+      return;
+    }
+  }
+}
+
+bool Table_t::restoreOneTransact() {
+  if (transactBuffer.empty()) return false;
+
+  transactBuffer.top()->restoreTransact(*this);
+  transactBuffer.pop();
+
+  --transactCounter;
+  return true;
+}
+
+void Table_t::draw(Graphics& g) {
+  if (! canDrawFlag) {
+    canDrawFlag = true;
+    return;
+  }
+
+  if (firstDrawFlag) {
+    updateTableViewData();
+    updateSortingSignList();
+
+    pnFilter.setUpElement();
+
+    lbFind = Label_t(left, top, "Find by " + headers[keyIndex] + ": ");
+    tfFind = TextField_t(left + lbFind.getCord().X, top, columnWidth[keyIndex]);
+
+    btnDetail = Button_t(left + tableView.getCord().X - 28, top, "Detail");
+    btnFilter = Button_t(btnDetail.getLeft() + btnDetail.getCord().X + 1, top, "Filter");
+    btnFullTable = Button_t(btnFilter.getLeft() + btnFilter.getCord().X + 1, top, "Full Table");
+
+    setDefaultColor();
+
+    //Find option
+    lbFind.draw(g);
+    tfFind.draw(g);
+
+    //detail option
+    btnDetail.draw(g);
+
+    //filter option
+    btnFilter.draw(g);
+
+    //full table option
+    btnFullTable.draw(g);
+
+    //draw header
+    g.setColor(DEFAULT_HEADER_ATTRIBUTES);
+
+    stringstream line;
+    line << style.top.left;
+    for (int i = 0; i < nColumn; ++i) {
+      line << string(columnWidth[i], style.horizontal);
+      line << (i == nColumn - 1 ? style.top.right : style.top.intersect);
+    }
+
+    g.write(left, top + 1, line.str());
+    line.str(string());
+    line.clear();
+
+    line << style.vertical;
+    for (int i = 0; i < nColumn; ++i) {
+      string text = headers[i];
+      size_t remaining = columnWidth[i] - text.size();
+      size_t half = remaining / 2;
+      line << string(half, ' ') << text << string(remaining - half, ' ');
+      line << style.vertical;
+    }
+
+    g.write(left, top + 2, line.str());
+
+    for (int i = 0; i < nColumn; ++i) {
+      sortingSignList[i]->draw(g);
+    }
+
+    firstDrawFlag = false;
+  }
+
+  if (tfFindFocus) {
+    tfFind.draw(g);
+    return;
+  }
+
+  tableView.draw(g);
+}
+
+bool Table_t::mouseScroll(int state, Graphics& g) {
+  return tableView.mouseScroll(state, g);
+}
+
+bool Table_t::mouseClick(int l, int t, Graphics& g) {
+  //click at sorting signs
+  if (g.isInside(l, t, left + 1, top + 2, tableView.getCord().X - 1, 0)) {
+    for (int i = 0; i < nColumn; ++i) {
+      if (sortingSignList[i]->mouseClick(l, t, g)) {
+        tfFindFocus = false;
+        if (currentSortingSign->state == 0) {
+          //sort key column inc
+          sortingSignList[keyIndex]->state = 1;
+          sortingSignList[keyIndex]->setValue(SortingSign::INC_SORT_SIGN);
+          sortingSignList[keyIndex]->setColor(SortingSign::INC_SORT_ATTRIBUTES);
+          currentSortingSign = sortingSignList[keyIndex];
+          currentSortingSign->draw(g);
+          sort(keyIndex);
+        } else if (currentSortingSign != sortingSignList[i]) {
+          currentSortingSign->setNoneState(g);
+          currentSortingSign = sortingSignList[i];
+          sort(i);
+        } else {
+          //click at current sign, modify this sign
+          sort(i);
+        }
+
+        updateTableViewData();
+
+        tableView.port->drawAllLineFlag = true;
+        tableView.draw(g);
+        canDrawFlag = false;
+        Rect_t::setFocus(*this);
+        return true;
+      }
+    }
+  }
+  if (tfFind.mouseClick(l, t, g)) {
+    tfFindFocus = true;
+    tfFind.draw(g);
+    g.setCursorVisibility(true);
+    Rect_t::setFocus(*this);
+    return true;
+  }
+  if (btnDetail.mouseClick(l, t, g)) {
+    tfFindFocus = false;
+    if (! rows.empty()) {
+      stringstream line;
+      int rowId = tableView.getSelectedIndex();
+      for (int i = 0; i < nColumn; ++i) {
+        line << headers[i] << ": " << rows[rowId][i] << "\n";
+      }
+      showMessageDialog("Information", line.str(), MessageBox_t::INFORMATION_MESSAGE);
+
+      canDrawFlag = false;
+      Rect_t::setFocus(*this);
+      return true;
+    }
+    return false;
+  }
+  if (btnFilter.mouseClick(l, t, g)) {
+    //clear tfFind data ?
+
+    tfFindFocus = false;
+    pnFilter.drawForm(false);
+
+    Rect_t::setFocus(tableView);
+    return true;
+  }
+  if (btnFullTable.mouseClick(l, t, g)) {
+    tfFindFocus = false;
+
+    ofstream fw(DEFAULT_TEMP_FILE_FULLTABLE_PATH.c_str());
+    if (!fw.good()) {
+      showMessageDialog("Loi He Thong", "Khong the su dung chuc nang nay!", MessageBox_t::ERROR_MESSAGE);
+      fw.close();
+      return false;
+    }
+    fw << outputText();
+    fw.close();
+
+    Rect_t::setFocus(*this);
+
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+
+    ZeroMemory( &si, sizeof(si) );
+    si.cb = sizeof(si);
+    ZeroMemory( &pi, sizeof(pi) );
+
+    string cmd = " " + DEFAULT_TEMP_FILE_FULLTABLE_PATH;
+    char cmdChrs[100];
+    strcpy(cmdChrs, cmd.c_str());
+    assert(CreateProcess("C:\\Windows\\System32\\notepad.exe", cmdChrs, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi));
+    CloseHandle( pi.hProcess );
+    CloseHandle( pi.hThread );
+
+    Rect_t::setFocus(*this);
+    return true;
+  }
+
+  return tableView.mouseClick(l, t, g);
+}
+
+void Table_t::keyPress(int keyCode, char ch, Graphics& g) {
+  if (tfFindFocus) {
+    string oldValue = tfFind.getValue();
+    tfFind.keyPress(keyCode, ch, g);
+    tfFind.draw(g);
+    string newValue = tfFind.getValue();
+
+    if (oldValue != newValue) {
+      //reset
+      rows = backUpRows;
+
+      if (newValue == "") {
+        Vector<string> data;
+        for (int i = 0; i < rows.size(); ++i) {
+          data.push_back(getRows(i));
+        }
+
+//        tableView.setData(data, savePortLineNum);
+        tableView.setData(data);
+
+      } else {
+//        Vector<int> findResultIndexList;
+        Vector<Vector<string> > newData;
+        Vector<string> outputRows;
+
+        for (int i = 0; i < rows.size(); ++i) {
+          if (newValue.size() > rows[i][keyIndex].size()) continue;
+          if (rows[i][keyIndex].substr(0, newValue.size()) == newValue)
+//            findResultIndexList.push_back(i);
+              newData.push_back(rows[i]);
+        }
+
+//        for (int i = 0; i < findResultIndexList.size(); ++i) {
+//          newData.push_back(rows[findResultIndexList[i]]);
+//        }
+
+        rows = newData;
+        for (int i = 0; i < rows.size(); ++i) {
+          outputRows.push_back(getRows(i));
+        }
+
+//        if (!rows.empty()) {
+////          tableView.setData(outputRows, savePortLineNum);
+//          tableView.setData(outputRows);
+//        } else {
+//          tableView.setData(outputRows);
+//        }
+        tableView.setData(outputRows);
+      }
+
+//      tableView.port->drawAllLineFlag = true;
+      tableView.setDrawAllLinePort(true);
+      tableView.draw(g);
+//      Rect_t::setFocus(tableView);
+    }
+    return;
+  }
+  tableView.keyPress(keyCode, ch, g);
+}
+
+bool Table_t::canGetFocus() {
+  return true;
+}

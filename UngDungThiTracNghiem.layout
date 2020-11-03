@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="data\DSMonHoc.data" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="88" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="model\DSLop_t_model.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1340" topLine="44" />
+		</Cursor>
+	</File>
+	<File name="data\DSLop.data" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="model\DSMonHoc_t_model.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="860" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="control\lib_vector.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="160" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="model\DSSinhVien_t_model.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2548" topLine="84" />
+		</Cursor>
+	</File>
+	<File name="control\lib_utility.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5807" topLine="167" />
+		</Cursor>
+	</File>
+	<File name="model\DiemThi_model.h" open="0" top="0" tabpos="3" split="2" active="1" splitpos="496" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="2993" topLine="105" />
+			<Cursor2 position="201" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="control\lib_sll.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="660" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="control\MenuBar_t.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="317" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="model\Lop_model.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1989" topLine="53" />
+		</Cursor>
+	</File>
+	<File name="control\TimeCounter.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1199" topLine="29" />
+		</Cursor>
+	</File>
+	<File name="control\Table_t.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="359" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="6836" topLine="219" />
+		</Cursor>
+	</File>
+	<File name="model\MonHoc_model.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="795" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="control\MenuBar_t.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="315" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="model\SinhVien_model.h" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4318" topLine="138" />
+		</Cursor>
+	</File>
+	<File name="view\CauHoiThiPanel.h" open="1" top="0" tabpos="0" split="2" active="1" splitpos="700" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="10774" topLine="354" />
+			<Cursor2 position="5563" topLine="179" />
+		</Cursor>
+	</File>
+	<File name="control\Label_t.h" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1066" topLine="29" />
+		</Cursor>
+	</File>
+	<File name="view\DSLopPanel.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="537" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="5009" topLine="163" />
+		</Cursor>
+	</File>
+	<File name="model\DSCauHoiThi_t_model.h" open="0" top="0" tabpos="0" split="2" active="1" splitpos="517" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="5835" topLine="258" />
+			<Cursor2 position="663" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="control\Label_t.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="949" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="view\DSMonHocPanel.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12324" topLine="399" />
+		</Cursor>
+	</File>
+	<File name="control\Rect_t.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3352" topLine="103" />
+		</Cursor>
+	</File>
+	<File name="view\DSSinhVienPanel.h" open="0" top="0" tabpos="2" split="2" active="1" splitpos="604" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="18156" topLine="581" />
+			<Cursor2 position="11475" topLine="352" />
+		</Cursor>
+	</File>
+	<File name="control\Menu_t.h" open="0" top="0" tabpos="13" split="2" active="1" splitpos="501" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="451" topLine="0" />
+			<Cursor2 position="315" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="view\DiemThiLopPanel.h" open="0" top="0" tabpos="0" split="2" active="1" splitpos="599" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="3633" topLine="126" />
+			<Cursor2 position="1799" topLine="56" />
+		</Cursor>
+	</File>
+	<File name="model\CauHoiThi_model.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2413" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="control\Menu_t.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2582" topLine="88" />
+		</Cursor>
+	</File>
+	<File name="view\DiemThiSinhVienPanel.h" open="0" top="0" tabpos="3" split="2" active="1" splitpos="516" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="8435" topLine="310" />
+			<Cursor2 position="12898" topLine="471" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="755" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="control\TextArea_t.cpp" open="0" top="0" tabpos="18" split="0" active="1" splitpos="604" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="2752" topLine="75" />
+		</Cursor>
+	</File>
+	<File name="view\UIForm.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="731" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="data\NganHangDeThi.data" open="1" top="1" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="46811" topLine="1965" />
+		</Cursor>
+	</File>
+	<File name="control\Table_t.h" open="0" top="0" tabpos="4" split="2" active="1" splitpos="501" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="8965" topLine="188" />
+			<Cursor2 position="8358" topLine="302" />
+		</Cursor>
+		<Folding>
+			<Collapse line="28" />
+			<Collapse line="29" />
+			<Collapse line="36" />
+			<Collapse line="52" />
+			<Collapse line="60" />
+			<Collapse line="65" />
+			<Collapse line="72" />
+			<Collapse line="77" />
+			<Collapse line="80" />
+			<Collapse line="92" />
+			<Collapse line="95" />
+			<Collapse line="102" />
+			<Collapse line="105" />
+			<Collapse line="113" />
+			<Collapse line="121" />
+			<Collapse line="146" />
+			<Collapse line="147" />
+			<Collapse line="173" />
+			<Collapse line="177" />
+			<Collapse line="184" />
+			<Collapse line="190" />
+			<Collapse line="191" />
+			<Collapse line="193" />
+			<Collapse line="211" />
+		</Folding>
+	</File>
+	<File name="view\gv_executive_form.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="470" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="752" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="data\Lop\D18CQCN03N1\DSSV.data" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="98" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="control\RadioBox_t.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1818" topLine="17" />
+		</Cursor>
+	</File>
+	<File name="control\Graphics.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2617" topLine="68" />
+		</Cursor>
+	</File>
+	<File name="view\login_form.h" open="0" top="0" tabpos="0" split="2" active="1" splitpos="567" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="3709" topLine="113" />
+			<Cursor2 position="5735" topLine="189" />
+		</Cursor>
+	</File>
+	<File name="data\Lop\D18CQCN03N2\DSSV.data" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="135" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="control\Rect_t.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1665" topLine="50" />
+		</Cursor>
+	</File>
+	<File name="control\Graphics.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="330" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="view\sv_executive_form.h" open="0" top="0" tabpos="1" split="2" active="1" splitpos="640" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="13546" topLine="414" />
+			<Cursor2 position="11346" topLine="342" />
+		</Cursor>
+	</File>
+	<File name="control\RadioBox_t.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2780" topLine="52" />
+		</Cursor>
+	</File>
+	<File name="control\EventEngine.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="354" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="control\Panel_t.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1262" topLine="2" />
+		</Cursor>
+	</File>
+	<File name="control\EventEngine.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2103" topLine="46" />
+		</Cursor>
+	</File>
+	<File name="control\PasswordField_t.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="506" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="control\ComboBox_t.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="618" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="control\PasswordField_t.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="316" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="control\ComboBox_t.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="248" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="1559" topLine="40" />
+		</Cursor>
+	</File>
+	<File name="control\Panel_t.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3121" topLine="100" />
+		</Cursor>
+	</File>
+	<File name="control\CheckList_t.h" open="0" top="0" tabpos="0" split="2" active="1" splitpos="532" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="2385" topLine="90" />
+			<Cursor2 position="533" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="control\TimeCounter.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2259" topLine="58" />
+		</Cursor>
+	</File>
+	<File name="control\MessageBox_t.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="679" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="control\CheckList_t.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="273" zoom_1="-2" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="8676" topLine="287" />
+		</Cursor>
+	</File>
+	<File name="control\TextField_t.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="270" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="control\MessageBox_t.h" open="0" top="0" tabpos="9" split="2" active="1" splitpos="501" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1514" topLine="43" />
+			<Cursor2 position="1463" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="control\CheckBox_t.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="523" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="control\TextField_t.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1018" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="control\CheckBox_t.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1876" topLine="68" />
+		</Cursor>
+	</File>
+	<File name="control\TextBox_t.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1069" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="control\Button_t.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="650" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="control\TextBox_t.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1766" topLine="1" />
+		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="13" />
+			<Collapse line="19" />
+			<Collapse line="34" />
+		</Folding>
+	</File>
+	<File name="control\Button_t.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="279" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="control\Border_t.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="635" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="control\TextArea_t.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="509" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="control\Border_t.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="59" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="model\DSDiemThi_t_model.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="678" topLine="6" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

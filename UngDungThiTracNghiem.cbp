@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="UngDungThiTracNghiem" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/UngDungThiTracNghiem" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-std=c++98" />
+					<Add option="-Og" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-O2" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="control/Border_t.cpp" />
+		<Unit filename="control/Border_t.h" />
+		<Unit filename="control/Button_t.cpp" />
+		<Unit filename="control/Button_t.h" />
+		<Unit filename="control/CheckBox_t.cpp" />
+		<Unit filename="control/CheckBox_t.h" />
+		<Unit filename="control/CheckList_t.cpp" />
+		<Unit filename="control/CheckList_t.h" />
+		<Unit filename="control/ComboBox_t.cpp" />
+		<Unit filename="control/ComboBox_t.h" />
+		<Unit filename="control/EventEngine.cpp" />
+		<Unit filename="control/EventEngine.h" />
+		<Unit filename="control/Graphics.cpp" />
+		<Unit filename="control/Graphics.h" />
+		<Unit filename="control/Label_t.cpp" />
+		<Unit filename="control/Label_t.h" />
+		<Unit filename="control/MenuBar_t.cpp" />
+		<Unit filename="control/MenuBar_t.h" />
+		<Unit filename="control/Menu_t.cpp" />
+		<Unit filename="control/Menu_t.h" />
+		<Unit filename="control/MessageBox_t.cpp" />
+		<Unit filename="control/MessageBox_t.h" />
+		<Unit filename="control/Panel_t.cpp" />
+		<Unit filename="control/Panel_t.h" />
+		<Unit filename="control/PasswordField_t.cpp" />
+		<Unit filename="control/PasswordField_t.h" />
+		<Unit filename="control/RadioBox_t.cpp" />
+		<Unit filename="control/RadioBox_t.h" />
+		<Unit filename="control/Rect_t.cpp" />
+		<Unit filename="control/Rect_t.h" />
+		<Unit filename="control/Table_t.cpp" />
+		<Unit filename="control/Table_t.h" />
+		<Unit filename="control/TextArea_t.cpp" />
+		<Unit filename="control/TextArea_t.h" />
+		<Unit filename="control/TextBox_t.cpp" />
+		<Unit filename="control/TextBox_t.h" />
+		<Unit filename="control/TextField_t.cpp" />
+		<Unit filename="control/TextField_t.h" />
+		<Unit filename="control/TimeCounter.cpp" />
+		<Unit filename="control/TimeCounter.h" />
+		<Unit filename="control/lib_sll.h" />
+		<Unit filename="control/lib_utility.h" />
+		<Unit filename="control/lib_vector.h" />
+		<Unit filename="data/DSLop.data" />
+		<Unit filename="data/DSMonHoc.data" />
+		<Unit filename="data/Lop/D18CQCN03N1/DSSV.data" />
+		<Unit filename="data/Lop/D18CQCN03N2/DSSV.data" />
+		<Unit filename="data/Lop/D18CQCN03N3/DSSV.data" />
+		<Unit filename="data/NganHangDeThi.data" />
+		<Unit filename="main.cpp" />
+		<Unit filename="model/CauHoiThi_model.h" />
+		<Unit filename="model/DSCauHoiThi_t_model.h" />
+		<Unit filename="model/DSDiemThi_t_model.h" />
+		<Unit filename="model/DSLop_t_model.h" />
+		<Unit filename="model/DSMonHoc_t_model.h" />
+		<Unit filename="model/DSSinhVien_t_model.h" />
+		<Unit filename="model/DiemThi_model.h" />
+		<Unit filename="model/Lop_model.h" />
+		<Unit filename="model/MonHoc_model.h" />
+		<Unit filename="model/SinhVien_model.h" />
+		<Unit filename="view/CauHoiThiPanel.h" />
+		<Unit filename="view/DSLopPanel.h" />
+		<Unit filename="view/DSMonHocPanel.h" />
+		<Unit filename="view/DSSinhVienPanel.h" />
+		<Unit filename="view/DiemThiLopPanel.h" />
+		<Unit filename="view/DiemThiSinhVienPanel.h" />
+		<Unit filename="view/UIForm.h" />
+		<Unit filename="view/gv_executive_form.h" />
+		<Unit filename="view/login_form.h" />
+		<Unit filename="view/sv_executive_form.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
