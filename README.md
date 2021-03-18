@@ -42,7 +42,7 @@
 
     Giải nén và mở UngDungThiTracNghiem.cbp bằng CodeBlock.
 
-- Chương trình hiển thị tốt ở độ phân giải màn hình 1902x1080 và cài đặt Font cho Window Command-line Prompt như mô tả:
+- Chương trình hiển thị tốt ở độ phân giải màn hình 1902x1080.
 
 ## Một số đặc điểm
 
