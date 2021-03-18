@@ -76,23 +76,23 @@
 
 1. Giáo viên login
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fa22cdce-125e-4d6b-951a-eb5aa6dafd31/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fa22cdce-125e-4d6b-951a-eb5aa6dafd31/Untitled.png)
+    ![Image 1](image/img1.png)
 
     Xây dựng thanh menu.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/07e81977-6fbf-425a-a096-ecf9e5345a65/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/07e81977-6fbf-425a-a096-ecf9e5345a65/Untitled.png)
+    ![Image 2](image/img2.png)
 
     Hỗ trợ hiển thị nhiều lớp panel và get back.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/def96c01-f36d-496c-82b5-060e723ea952/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/def96c01-f36d-496c-82b5-060e723ea952/Untitled.png)
+    ![Image 3](image/img3.png)
 
 1. Sinh viên login
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a44e7df8-e663-4a9c-9e62-34aa21ad7018/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a44e7df8-e663-4a9c-9e62-34aa21ad7018/Untitled.png)
+    ![Image 4](image/img4.png)
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/35e0d18f-de6d-4d7f-8a0f-0ab2dd0d4487/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/35e0d18f-de6d-4d7f-8a0f-0ab2dd0d4487/Untitled.png)
+    ![Image 5](image/img5.png)
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0baa00bc-1f55-49cc-8689-ca8c7cfd8a60/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0baa00bc-1f55-49cc-8689-ca8c7cfd8a60/Untitled.png)
+    ![Image 6](image/img6.png)
 
 ## Một số điểm cần cải thiện
 
