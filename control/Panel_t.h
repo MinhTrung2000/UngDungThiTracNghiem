@@ -17,53 +17,58 @@ Close panel: reset flag + reset current focus
 Hide Panel: reset flag
 */
 
-class Panel_t : public Rect_t {
+class Panel_t : public Rect_t
+{
 protected:
-	Vector<Rect_t *> items;
+    Vector<Rect_t *> items;
 
-	Rect_t *currentFocusItem;
+    Rect_t *currentFocusItem;
 
 public:
-	Panel_t();
-	Panel_t(int l, int t, COORD cord);
-	Panel_t(int borderType, int l, int t, COORD cord);
-	Panel_t(int borderType, int l, int t, COORD cord, const string& title);
+    Panel_t();
+    Panel_t(int l, int t, COORD cord);
+    Panel_t(int borderType, int l, int t, COORD cord);
+    Panel_t(int borderType, int l, int t, COORD cord, const string& title);
 
-	virtual void setFirstDrawFlag(bool flag);
+    virtual void setFirstDrawFlag(bool flag);
 
-	virtual void setBuffer();
-	virtual void getBuffer(Graphics& g);
+    virtual void setBuffer();
+    virtual void getBuffer(Graphics& g);
 
-	virtual void setReRunFlag(bool flag) {}
-	virtual bool getReRunFlag() { return false; }
+    virtual void setReRunFlag(bool flag) {}
+    virtual bool getReRunFlag()
+    {
+        return false;
+    }
 
-	virtual void setCurrentFocus(Rect_t *rect);
-	Rect_t *getCurrentFocus();
+    virtual void setCurrentFocus(Rect_t *rect);
+    Rect_t *getCurrentFocus();
 
-	virtual void setDefaultColor();
+    virtual void setDefaultColor();
 
-	virtual void setCoor(int l, int t, COORD cor);
-	virtual void setCoor(int l, int t);
-	virtual void setCoor();
+    virtual void setCoor(int l, int t, COORD cor);
+    virtual void setCoor(int l, int t);
+    virtual void setCoor();
 
-	virtual void draw(Graphics& g);
+    virtual void draw(Graphics& g);
 
-	virtual void add(Rect_t* rect);
+    virtual void add(Rect_t* rect);
 
-	//ignore key press
-	virtual bool mouseClick(int l, int t, Graphics &g);
+    //ignore key press
+    virtual bool mouseClick(int l, int t, Graphics &g);
 
-  void getAllRects(Vector<Rect_t *> &rects);
+    void getAllRects(Vector<Rect_t *> &rects);
 
-	Panel_t& operator = (const Panel_t& o) {
-    Rect_t::operator=(o);
+    Panel_t& operator = (const Panel_t& o)
+    {
+        Rect_t::operator=(o);
 
-    items = o.items;
+        items = o.items;
 
-    currentFocusItem = o.currentFocusItem;
+        currentFocusItem = o.currentFocusItem;
 
-    return *this;
-	}
+        return *this;
+    }
 };
 
 #endif

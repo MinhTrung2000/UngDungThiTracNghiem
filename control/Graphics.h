@@ -14,24 +14,40 @@
 //debug
 using namespace std;
 
-inline string to_string(const string & s) { return '"' + s + '"'; }
-inline string to_string(bool b) { return (b ? "true" : "false"); }
-inline string to_string(const int& b) { return StringUtility::to_string(b); }
-
-template<typename A> string to_string(const Vector<A>& v) {
-	bool f = 1;
-	string res = "{";
-  for (int i = 0; i < v.size(); ++i) {
-		if(!f) res += ", ";
-		f = 0;
-		res += to_string(v[i]);
-	}
-	return res + "}";
+inline string to_string(const string & s)
+{
+    return '"' + s + '"';
 }
-inline void deb_out() { cerr << endl; }
-template<typename H,typename... T> void deb_out(H h, T... t) {
-	cerr << " " << to_string(h);
-	deb_out(t...);
+inline string to_string(bool b)
+{
+    return (b ? "true" : "false");
+}
+inline string to_string(const int& b)
+{
+    return StringUtility::to_string(b);
+}
+
+template<typename A> string to_string(const Vector<A>& v)
+{
+    bool f = 1;
+    string res = "{";
+    for (int i = 0; i < v.size(); ++i)
+    {
+        if(!f)
+            res += ", ";
+        f = 0;
+        res += to_string(v[i]);
+    }
+    return res + "}";
+}
+inline void deb_out()
+{
+    cerr << endl;
+}
+template<typename H,typename... T> void deb_out(H h, T... t)
+{
+    cerr << " " << to_string(h);
+    deb_out(t...);
 }
 #ifndef LOCAL
 #define deb(...) cerr << "[" << #__VA_ARGS__ << "]:"; deb_out(__VA_ARGS__);
@@ -89,167 +105,186 @@ const char CHAR_CONTROL = '\x11';
 #define DEFAULT_BUTTON_FOCUS_ATTRIBUTES 0xb1
 #define DEFAULT_BUTTON_UNFOCUS_ATTRIBUTES 0x79
 
-class Graphics {
+class Graphics
+{
 private:
-  static Graphics* currentActiveGraphics;
+    static Graphics* currentActiveGraphics;
 
-	HANDLE _console;
-	uint8_t _attribute;
-	COORD currentCursorPosition;
-  COORD maxWindowSize;
+    HANDLE _console;
+    uint8_t _attribute;
+    COORD currentCursorPosition;
+    COORD maxWindowSize;
 
-	Graphics(DWORD stdHandle = STD_OUTPUT_HANDLE);
+    Graphics(DWORD stdHandle = STD_OUTPUT_HANDLE);
 
-	friend class BufferInfo;
+    friend class BufferInfo;
 
 public:
 
-	void setConsoleTitle(const string& title);
+    void setConsoleTitle(const string& title);
 
-	void setScreenSize(int w, int h);
+    void setScreenSize(int w, int h);
 
-	void clearScreen();
+    void clearScreen();
 
-	void clearEndOfLine();
+    void clearEndOfLine();
 
-	void clearRect(short l, short t, COORD cord, uint8_t attributes);
+    void clearRect(short l, short t, COORD cord, uint8_t attributes);
 
-	void moveTo(int x, int y);
+    void moveTo(int x, int y);
 
-	COORD getMaxCoord();
+    COORD getMaxCoord();
 
-	void setColor(uint8_t attr);
+    void setColor(uint8_t attr);
 
-  void setColor();
+    void setColor();
 
-	void write(string s);
+    void write(string s);
 
-	void write(int x, int y, string s);
+    void write(int x, int y, string s);
 
-	void write(wstring s);
+    void write(wstring s);
 
-	void write(int x, int y, wstring s);
+    void write(int x, int y, wstring s);
 
-	void setCursorVisibility(bool isVisible);
+    void setCursorVisibility(bool isVisible);
 
-	bool getCursorVisibility();
+    bool getCursorVisibility();
 
-	bool isInside(int x, int y, int left, int top, int width, int height);
+    bool isInside(int x, int y, int left, int top, int width, int height);
 
-	COORD getCursorPos();
+    COORD getCursorPos();
 
-	void setCursorPos(int x, int y);
+    void setCursorPos(int x, int y);
 
-	COORD getCurrentPosition();
+    COORD getCurrentPosition();
 
-	static void setCurrentActiveGraphics(Graphics* g) {
-    currentActiveGraphics = g;
-	}
+    static void setCurrentActiveGraphics(Graphics* g)
+    {
+        currentActiveGraphics = g;
+    }
 
-	static Graphics *getCurrentActiveGraphics() {
-    return currentActiveGraphics;
-	}
+    static Graphics *getCurrentActiveGraphics()
+    {
+        return currentActiveGraphics;
+    }
 
-	Graphics& operator = (const Graphics& rhs) {
-	  _console = rhs._console;
-    _attribute = rhs._attribute;
-    currentCursorPosition = rhs.currentCursorPosition;
-    maxWindowSize = rhs.maxWindowSize;
-    return *this;
-	}
+    Graphics& operator = (const Graphics& rhs)
+    {
+        _console = rhs._console;
+        _attribute = rhs._attribute;
+        currentCursorPosition = rhs.currentCursorPosition;
+        maxWindowSize = rhs.maxWindowSize;
+        return *this;
+    }
 };
 
-class BufferInfo {
+class BufferInfo
+{
 private:
-	int leftBuffer;
-	int topBuffer;		//, right, bottom;
-	COORD cordBuffer;
-	CHAR_INFO *output;
-	int szOutput;
+    int leftBuffer;
+    int topBuffer;		//, right, bottom;
+    COORD cordBuffer;
+    CHAR_INFO *output;
+    int szOutput;
 
 public:
-	BufferInfo()
-		: leftBuffer(0), topBuffer(0), cordBuffer({0, 0}), szOutput(0), output(NULL) {}
+    BufferInfo()
+        : leftBuffer(0), topBuffer(0), cordBuffer(
+    {
+        0, 0
+    }), szOutput(0), output(NULL) {}
 
-	BufferInfo(int l, int t, COORD c)
-		: leftBuffer(l), topBuffer(t), cordBuffer(c){
-		szOutput = (cordBuffer.X + 2) * (cordBuffer.Y + 2);
-		output = new CHAR_INFO[szOutput];
-	}
+    BufferInfo(int l, int t, COORD c)
+        : leftBuffer(l), topBuffer(t), cordBuffer(c)
+    {
+        szOutput = (cordBuffer.X + 2) * (cordBuffer.Y + 2);
+        output = new CHAR_INFO[szOutput];
+    }
 
-	~BufferInfo() {
-		delete[] output;
-	}
+    ~BufferInfo()
+    {
+        delete[] output;
+    }
 
-	void setCoor(int l, int t, COORD c) {
-	  if (output == NULL) return;
-		leftBuffer = l;
-		topBuffer = t;
-		cordBuffer = c;
-		szOutput = (cordBuffer.X + 2) * (cordBuffer.Y + 2);
-		delete[] output;
-		output = new CHAR_INFO[szOutput];
-	}
+    void setCoor(int l, int t, COORD c)
+    {
+        if (output == NULL)
+            return;
+        leftBuffer = l;
+        topBuffer = t;
+        cordBuffer = c;
+        szOutput = (cordBuffer.X + 2) * (cordBuffer.Y + 2);
+        delete[] output;
+        output = new CHAR_INFO[szOutput];
+    }
 
-	BufferInfo& operator = (const BufferInfo& o) {
-		leftBuffer = o.leftBuffer;
-		topBuffer = o.topBuffer;
-		cordBuffer = o.cordBuffer;
-		szOutput = o.szOutput;
+    BufferInfo& operator = (const BufferInfo& o)
+    {
+        leftBuffer = o.leftBuffer;
+        topBuffer = o.topBuffer;
+        cordBuffer = o.cordBuffer;
+        szOutput = o.szOutput;
 
-		delete[] output;
+        delete[] output;
 
-		output = new CHAR_INFO[szOutput];
-		for (int i = 0; i < szOutput; ++i) {
-			output[i] = o.output[i];
-		}
-		return *this;
-	}
+        output = new CHAR_INFO[szOutput];
+        for (int i = 0; i < szOutput; ++i)
+        {
+            output[i] = o.output[i];
+        }
+        return *this;
+    }
 
-	bool update(const Graphics& g) {
-		SMALL_RECT srctReadRect;
-		srctReadRect.Left = leftBuffer;
-		srctReadRect.Top = topBuffer;
-		srctReadRect.Right = leftBuffer + cordBuffer.X + 1;
-		srctReadRect.Bottom = topBuffer + cordBuffer.Y + 1;
+    bool update(const Graphics& g)
+    {
+        SMALL_RECT srctReadRect;
+        srctReadRect.Left = leftBuffer;
+        srctReadRect.Top = topBuffer;
+        srctReadRect.Right = leftBuffer + cordBuffer.X + 1;
+        srctReadRect.Bottom = topBuffer + cordBuffer.Y + 1;
 
-		COORD coordBufferSize;
-		coordBufferSize.X = cordBuffer.X + 2;
-		coordBufferSize.Y = cordBuffer.Y + 2;
+        COORD coordBufferSize;
+        coordBufferSize.X = cordBuffer.X + 2;
+        coordBufferSize.Y = cordBuffer.Y + 2;
 
-		COORD coordBufferCoord;
-		coordBufferCoord.X = 0;
-		coordBufferCoord.Y = 0;
+        COORD coordBufferCoord;
+        coordBufferCoord.X = 0;
+        coordBufferCoord.Y = 0;
 
-		if (! ReadConsoleOutput(g._console, output, coordBufferSize, coordBufferCoord, &srctReadRect))
-			return false;
+        if (! ReadConsoleOutput(g._console, output, coordBufferSize, coordBufferCoord, &srctReadRect))
+            return false;
 
-		return true;
-	}
+        return true;
+    }
 
-	bool get(const Graphics& g) {
-		SMALL_RECT srctReadRect;
-		srctReadRect.Left = leftBuffer;
-		srctReadRect.Top = topBuffer;
-		srctReadRect.Right = leftBuffer + cordBuffer.X + 1;
-		srctReadRect.Bottom = topBuffer + cordBuffer.Y + 1;
+    bool get(const Graphics& g)
+    {
+        SMALL_RECT srctReadRect;
+        srctReadRect.Left = leftBuffer;
+        srctReadRect.Top = topBuffer;
+        srctReadRect.Right = leftBuffer + cordBuffer.X + 1;
+        srctReadRect.Bottom = topBuffer + cordBuffer.Y + 1;
 
-		COORD coordBufferSize;
-		coordBufferSize.X = cordBuffer.X + 2;
-		coordBufferSize.Y = cordBuffer.Y + 2;
+        COORD coordBufferSize;
+        coordBufferSize.X = cordBuffer.X + 2;
+        coordBufferSize.Y = cordBuffer.Y + 2;
 
-		COORD coordBufferCoord;
-		coordBufferCoord.X = 0;
-		coordBufferCoord.Y = 0;
+        COORD coordBufferCoord;
+        coordBufferCoord.X = 0;
+        coordBufferCoord.Y = 0;
 
-		bool res;
+        bool res;
 
-		if (! WriteConsoleOutput(g._console, output, coordBufferSize, coordBufferCoord, &srctReadRect)) {
-			res = false;
-		} else res = true;
+        if (! WriteConsoleOutput(g._console, output, coordBufferSize, coordBufferCoord, &srctReadRect))
+        {
+            res = false;
+        }
+        else
+            res = true;
 
-		return res;
-	}
+        return res;
+    }
 };
 
 #endif

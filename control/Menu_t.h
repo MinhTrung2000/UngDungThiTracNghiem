@@ -8,83 +8,88 @@
 #include "Panel_t.h"
 #include "../view/UIForm.h"
 
-class Menu_t : public Rect_t {
+class Menu_t : public Rect_t
+{
 protected:
-  Label_t lbMenu;
+    Label_t lbMenu;
 
-  RadioBox_t menuItems;
+    RadioBox_t menuItems;
 
-  Rect_t *menuBar;
+    Rect_t *menuBar;
 
-  Vector<Panel_t *> panelPtrs;
+    Vector<Panel_t *> panelPtrs;
 
-  bool menuOpenFlag;
-  bool oneClickMode;
+    bool menuOpenFlag;
+    bool oneClickMode;
 
-  uint8_t focusLabelAttr;
-  uint8_t unFocusLabelAttr;
+    uint8_t focusLabelAttr;
+    uint8_t unFocusLabelAttr;
 
-  virtual void processPanel(Panel_t *pn);
+    virtual void processPanel(Panel_t *pn);
 
-  friend class MenuBar_t;
+    friend class MenuBar_t;
 
 public:
-  Menu_t();
+    Menu_t();
 
-  //one click mode
-  Menu_t(const string& label);
+    //one click mode
+    Menu_t(const string& label);
 
-  Menu_t(const string& label, const Vector<string>& itemList);
+    Menu_t(const string& label, const Vector<string>& itemList);
 
-  void collapse(Graphics& g);
+    void collapse(Graphics& g);
 
-  void setPanelLinkAtIndex(int id, Panel_t *ptr);
+    void setPanelLinkAtIndex(int id, Panel_t *ptr);
 
-  void setColorLabel(uint8_t focusAttr, uint8_t unFocusAttr);
+    void setColorLabel(uint8_t focusAttr, uint8_t unFocusAttr);
 
-  void setColorMenuItem(uint8_t focusAttr, uint8_t unFocusAttr);
+    void setColorMenuItem(uint8_t focusAttr, uint8_t unFocusAttr);
 
-  void setFocus();
+    void setFocus();
 
-  void setCoor(int l, int t);
+    void setCoor(int l, int t);
 
-  int getSelectedIndex();
+    int getSelectedIndex();
 
-  string getSelectedValue();
+    string getSelectedValue();
 
-  string getMenuLabelValue();
+    string getMenuLabelValue();
 
-  void draw(Graphics& g);
+    void draw(Graphics& g);
 
-  void releaseFocus(Graphics& g);
+    void releaseFocus(Graphics& g);
 
-  bool mouseClick(int l, int t, Graphics& g);
+    bool mouseClick(int l, int t, Graphics& g);
 
-  bool mouseScroll(int state, Graphics& g);
+    bool mouseScroll(int state, Graphics& g);
 
-  void keyPress(int keyCode, char ch, Graphics& g);
+    void keyPress(int keyCode, char ch, Graphics& g);
 
-  bool canGetFocus() { return false; }
+    bool canGetFocus()
+    {
+        return false;
+    }
 
-  Menu_t& operator = (const Menu_t& o) {
-    Rect_t::operator=(o);
+    Menu_t& operator = (const Menu_t& o)
+    {
+        Rect_t::operator=(o);
 
-    lbMenu = o.lbMenu;
+        lbMenu = o.lbMenu;
 
-    menuItems = o.menuItems;
+        menuItems = o.menuItems;
 
-    menuBar = o.menuBar;
+        menuBar = o.menuBar;
 
-    panelPtrs = o.panelPtrs;
+        panelPtrs = o.panelPtrs;
 
-    menuOpenFlag = o.menuOpenFlag;
-    oneClickMode = o.oneClickMode;
+        menuOpenFlag = o.menuOpenFlag;
+        oneClickMode = o.oneClickMode;
 
-    focusLabelAttr = o.focusLabelAttr;
-    unFocusLabelAttr = o.unFocusLabelAttr;
+        focusLabelAttr = o.focusLabelAttr;
+        unFocusLabelAttr = o.unFocusLabelAttr;
 
-    return *this;
-  }
+        return *this;
+    }
 };
 
 #endif // MENU_T_H_INCLUDED

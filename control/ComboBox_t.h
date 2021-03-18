@@ -10,65 +10,73 @@
 #include "RadioBox_t.h"
 #include "lib_vector.h"
 
-class ComboBox_t : public Rect_t {
+class ComboBox_t : public Rect_t
+{
 private:
-  static const string EMPTY_VALUE;
+    static const string EMPTY_VALUE;
 
-	bool menuOpenFlag;
-  bool onlyDrawMenuFlag;
+    bool menuOpenFlag;
+    bool onlyDrawMenuFlag;
 
-  RadioBox_t comboOptions;
+    RadioBox_t comboOptions;
 
-  friend class Table_t;
+    friend class Table_t;
 
 public:
-	ComboBox_t();
-	ComboBox_t(int l, int t);
-	ComboBox_t(int l, int t, const Vector<string>& options);
-	ComboBox_t(int l, int t, int lineNumber);
-	ComboBox_t(int l, int t, int lineNumber, const Vector<string>& options);
+    ComboBox_t();
+    ComboBox_t(int l, int t);
+    ComboBox_t(int l, int t, const Vector<string>& options);
+    ComboBox_t(int l, int t, int lineNumber);
+    ComboBox_t(int l, int t, int lineNumber, const Vector<string>& options);
 
-	void clear();
+    void clear();
 
-	bool empty() { return comboOptions.empty(); }
+    bool empty()
+    {
+        return comboOptions.empty();
+    }
 
-	bool getOpenFlag() { return menuOpenFlag; }
+    bool getOpenFlag()
+    {
+        return menuOpenFlag;
+    }
 
-  void setColorOptions(uint8_t focusAttrr, uint8_t unFocusAttr);
-  void setDefaultColor();
+    void setColorOptions(uint8_t focusAttrr, uint8_t unFocusAttr);
+    void setDefaultColor();
 
-  void setData(const Vector<string>& newData);
+    void setData(const Vector<string>& newData);
 
-  void setSelectedIndex(int id);
+    void setSelectedIndex(int id);
 
-  void setFirstSelected();
+    void setFirstSelected();
 
-  int getSelectedIndex();
+    int getSelectedIndex();
 
-	string getSelectedValue();
+    string getSelectedValue();
 
-	void setCoor(int l, int t);
+    void setCoor(int l, int t);
 
-	void draw(Graphics& g);
+    void draw(Graphics& g);
 
-	bool mouseClick(int left, int top, Graphics& g);
+    bool mouseClick(int left, int top, Graphics& g);
 
-	bool mouseScroll(int state, Graphics& g);
+    bool mouseScroll(int state, Graphics& g);
 
-	void keyPress(int keyCode, char ch, Graphics& g);
+    void keyPress(int keyCode, char ch, Graphics& g);
 
-	void releaseFocus(Graphics& g);
+    void releaseFocus(Graphics& g);
 
-  ComboBox_t& operator = (const ComboBox_t& o) {
-    Rect_t::operator=(o);
+    ComboBox_t& operator = (const ComboBox_t& o)
+    {
+        Rect_t::operator=(o);
 
-    menuOpenFlag = o.menuOpenFlag;
-    onlyDrawMenuFlag = o.onlyDrawMenuFlag;
+        menuOpenFlag = o.menuOpenFlag;
+        onlyDrawMenuFlag = o.onlyDrawMenuFlag;
 
-    comboOptions = o.comboOptions;
+        comboOptions = o.comboOptions;
 
-    return *this;
-	}
+        return *this;
+    }
 };
 
 #endif

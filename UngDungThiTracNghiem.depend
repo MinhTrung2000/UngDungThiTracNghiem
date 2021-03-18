@@ -1252,3 +1252,448 @@
 1593007779 source:c:\users\tmtcoder\desktop\ungdungthitracnghiem\control\timecounter.cpp
 	"TimeCounter.h"
 
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\border_t.cpp
+	"Border_t.h"
+	<cassert>
+	<string>
+	<iostream>
+
+1616043961 f:\it\c++\ungdungthitracnghiem\control\border_t.h
+	<windows.h>
+	"Graphics.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\graphics.h
+	<string>
+	<stdint.h>
+	<iostream>
+	<windows.h>
+	<conio.h>
+	<cassert>
+	"lib_utility.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\lib_utility.h
+	<cstring>
+	<string>
+	<cassert>
+	<fstream>
+	<sstream>
+	<cstdlib>
+	<ctime>
+	<windows.h>
+	<conio.h>
+	"lib_vector.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\control\lib_vector.h
+	<iostream>
+
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\button_t.cpp
+	"Button_t.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\control\button_t.h
+	<string>
+	<windows.h>
+	<iostream>
+	"Graphics.h"
+	"Rect_t.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\control\rect_t.h
+	<stdint.h>
+	<cassert>
+	"Graphics.h"
+	"Border_t.h"
+	"lib_vector.h"
+
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\checkbox_t.cpp
+	"CheckBox_t.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\checkbox_t.h
+	<string>
+	<sstream>
+	<iostream>
+	<stdint.h>
+	"Label_t.h"
+	"lib_vector.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\label_t.h
+	<string>
+	"Rect_t.h"
+
+1616043960 source:f:\it\c++\ungdungthitracnghiem\control\checklist_t.cpp
+	"CheckList_t.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\checklist_t.h
+	<string>
+	<stdint.h>
+	"CheckBox_t.h"
+	"Label_t.h"
+	"lib_vector.h"
+
+1616043960 source:f:\it\c++\ungdungthitracnghiem\control\combobox_t.cpp
+	"ComboBox_t.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\combobox_t.h
+	<windows.h>
+	<string>
+	<cassert>
+	"Label_t.h"
+	"Rect_t.h"
+	"RadioBox_t.h"
+	"lib_vector.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\radiobox_t.h
+	"CheckList_t.h"
+	"lib_vector.h"
+
+1616043960 source:f:\it\c++\ungdungthitracnghiem\control\eventengine.cpp
+	"EventEngine.h"
+	<windows.h>
+	<conio.h>
+	<cassert>
+	<string>
+	<iostream>
+	"lib_vector.h"
+	"RadioBox_t.h"
+	"Checklist_t.h"
+	"Panel_t.h"
+	"TimeCounter.h"
+	"../view/UIForm.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\control\eventengine.h
+	<windows.h>
+	"Rect_t.h"
+	"Panel_t.h"
+	"Graphics.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\control\panel_t.h
+	<string>
+	"Rect_t.h"
+	"RadioBox_t.h"
+	"CheckList_t.h"
+	"lib_vector.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\timecounter.h
+	"Label_t.h"
+	"lib_vector.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\view\uiform.h
+	"../control/EventEngine.h"
+	"../control/Rect_t.h"
+	"../control/Panel_t.h"
+	"../control/MessageBox_t.h"
+	<cassert>
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\messagebox_t.h
+	<cassert>
+	<stdint.h>
+	<string>
+	<sstream>
+	"Button_t.h"
+	"EventEngine.h"
+	"Panel_t.h"
+	"lib_vector.h"
+
+1616043960 source:f:\it\c++\ungdungthitracnghiem\control\graphics.cpp
+	"Graphics.h"
+
+1616043960 source:f:\it\c++\ungdungthitracnghiem\control\label_t.cpp
+	"Label_t.h"
+
+1616043960 source:f:\it\c++\ungdungthitracnghiem\control\menu_t.cpp
+	"Menu_t.h"
+	<cassert>
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\menu_t.h
+	"Graphics.h"
+	"Panel_t.h"
+	"Label_t.h"
+	"MessageBox_t.h"
+	"Panel_t.h"
+	"../view/UIForm.h"
+
+1616043960 source:f:\it\c++\ungdungthitracnghiem\control\menubar_t.cpp
+	"MenuBar_t.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\control\menubar_t.h
+	"Menu_t.h"
+
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\messagebox_t.cpp
+	"MessageBox_t.h"
+
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\panel_t.cpp
+	"Panel_t.h"
+
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\passwordfield_t.cpp
+	"PasswordField_t.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\control\passwordfield_t.h
+	"TextField_t.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\textfield_t.h
+	<string>
+	<cctype>
+	<windows.h>
+	"Rect_t.h"
+
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\radiobox_t.cpp
+	"RadioBox_t.h"
+
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\rect_t.cpp
+	"Rect_t.h"
+
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\table_t.cpp
+	"Table_t.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\control\table_t.h
+	<string>
+	<sstream>
+	<stdint.h>
+	<cmath>
+	"Rect_t.h"
+	"RadioBox_t.h"
+	"CheckList_t.h"
+	"TextBox_t.h"
+	"Button_t.h"
+	"MessageBox_t.h"
+	"TextField_t.h"
+	"TextArea_t.h"
+	"ComboBox_t.h"
+	"TextBox_t.h"
+	"../view/UIForm.h"
+	"lib_vector.h"
+	"lib_stack.h"
+	"lib_utility.h"
+	"lib_avltree.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\control\textbox_t.h
+	<string>
+	"RadioBox_t.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\control\textarea_t.h
+	<string>
+	<cctype>
+	<windows.h>
+	"Rect_t.h"
+
+1616043452 f:\it\c++\ungdungthitracnghiem\control\lib_stack.h
+	<cassert>
+
+1616043452 f:\it\c++\ungdungthitracnghiem\control\lib_avltree.h
+
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\textarea_t.cpp
+	"TextArea_t.h"
+
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\textbox_t.cpp
+	"TextBox_t.h"
+
+1616043960 source:f:\it\c++\ungdungthitracnghiem\control\textfield_t.cpp
+	"TextField_t.h"
+
+1616043961 source:f:\it\c++\ungdungthitracnghiem\control\timecounter.cpp
+	"TimeCounter.h"
+
+1616044022 source:f:\it\c++\ungdungthitracnghiem\main.cpp
+	<cstring>
+	<string>
+	<cassert>
+	<iostream>
+	<fstream>
+	<conio.h>
+	<windows.h>
+	"control/Menu_t.h"
+	"control/Table_t.h"
+	"control/ComboBox_t.h"
+	"control/RadioBox_t.h"
+	"control/TextBox_t.h"
+	"view/login_form.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\view\login_form.h
+	<stdlib.h>
+	"UIForm.h"
+	"../model/DSLop_t_model.h"
+	"../control/Button_t.h"
+	"../control/Label_t.h"
+	"../control/TextField_t.h"
+	"../control/PasswordField_t.h"
+	"../control/MessageBox_t.h"
+	"sv_executive_form.h"
+	"gv_executive_form.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\model\dslop_t_model.h
+	"Lop_model.h"
+	"SinhVien_model.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\model\lop_model.h
+	<string>
+	<cstdio>
+	<direct.h>
+	"../control/lib_vector.h"
+	"SinhVien_model.h"
+	"DSSinhVien_t_model.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\model\sinhvien_model.h
+	<string>
+	<direct.h>
+	"../control/lib_sll.h"
+	"DiemThi_model.h"
+	"DSDiemThi_t_model.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\control\lib_sll.h
+
+1616043960 f:\it\c++\ungdungthitracnghiem\model\diemthi_model.h
+	<string>
+	<cassert>
+	"MonHoc_model.h"
+	"CauHoiThi_model.h"
+	"DSCauHoiThi_t_model.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\model\monhoc_model.h
+	<string>
+	<cassert>
+	"../control/MessageBox_t.h"
+	"Lop_model.h"
+	"CauHoiThi_model.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\model\cauhoithi_model.h
+	<string>
+	"MonHoc_model.h"
+	"../control/lib_vector.h"
+	"../control/lib_utility.h"
+	"../control/MessageBox_t.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\model\dscauhoithi_t_model.h
+
+1616043961 f:\it\c++\ungdungthitracnghiem\model\dsdiemthi_t_model.h
+	"DiemThi_model.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\model\dssinhvien_t_model.h
+	"SinhVien_model.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\view\sv_executive_form.h
+	"UIForm.h"
+	"../control/Panel_t.h"
+	"../control/MessageBox_t.h"
+	"../control/Button_t.h"
+	"../control/ComboBox_t.h"
+	"../control/CheckList_t.h"
+	"../control/RadioBox_t.h"
+	"../control/TextBox_t.h"
+	"../control/TextField_t.h"
+	"../control/TextArea_t.h"
+	"../control/Menu_t.h"
+	"../control/MenuBar_t.h"
+	"../control/TimeCounter.h"
+	"DSMonHocPanel.h"
+	"DSLopPanel.h"
+	"DSSinhVienPanel.h"
+	"DiemThiLopPanel.h"
+	"DiemThiSinhVienPanel.h"
+	"CauHoiThiPanel.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\view\dsmonhocpanel.h
+	"UIForm.h"
+	"../control/Panel_t.h"
+	"../control/MessageBox_t.h"
+	"../control/Button_t.h"
+	"../control/ComboBox_t.h"
+	"../control/Table_t.h"
+	"../control/TextField_t.h"
+	"../model/MonHoc_model.h"
+	"../model/DSMonHoc_t_model.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\model\dsmonhoc_t_model.h
+	"MonHoc_model.h"
+	"DSLop_t_model.h"
+	"DSCauHoiThi_t_model.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\view\dsloppanel.h
+	"UIForm.h"
+	"../control/Panel_t.h"
+	"../control/MessageBox_t.h"
+	"../control/Button_t.h"
+	"../control/ComboBox_t.h"
+	"../control/Table_t.h"
+	"../control/TextField_t.h"
+	"../model/Lop_model.h"
+	"../model/DSLop_t_model.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\view\dssinhvienpanel.h
+	<direct.h>
+	"../control/Panel_t.h"
+	"../control/MessageBox_t.h"
+	"../control/Button_t.h"
+	"../control/ComboBox_t.h"
+	"../control/CheckList_t.h"
+	"../control/RadioBox_t.h"
+	"../control/TextBox_t.h"
+	"../control/TextField_t.h"
+	"../control/TextArea_t.h"
+	"../model/DSMonHoc_t_model.h"
+	"../model/DSLop_t_model.h"
+	"../model/DSSinhVien_t_model.h"
+	"../model/DSDiemThi_t_model.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\view\diemthiloppanel.h
+	"../control/Panel_t.h"
+	"../control/MessageBox_t.h"
+	"../control/Button_t.h"
+	"../control/ComboBox_t.h"
+	"../control/CheckList_t.h"
+	"../control/RadioBox_t.h"
+	"../control/TextBox_t.h"
+	"../control/TextField_t.h"
+	"../control/TextArea_t.h"
+	"../model/DSMonHoc_t_model.h"
+	"../model/DSLop_t_model.h"
+	"../model/DSSinhVien_t_model.h"
+	"../model/DSDiemThi_t_model.h"
+
+1616043960 f:\it\c++\ungdungthitracnghiem\view\diemthisinhvienpanel.h
+	"../control/Panel_t.h"
+	"../control/MessageBox_t.h"
+	"../control/Button_t.h"
+	"../control/ComboBox_t.h"
+	"../control/CheckList_t.h"
+	"../control/RadioBox_t.h"
+	"../control/TextBox_t.h"
+	"../control/TextField_t.h"
+	"../control/TextArea_t.h"
+	"../model/DSMonHoc_t_model.h"
+	"../model/DSLop_t_model.h"
+	"../model/DSSinhVien_t_model.h"
+	"../model/DSDiemThi_t_model.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\view\cauhoithipanel.h
+	"../control/Panel_t.h"
+	"../control/MessageBox_t.h"
+	"../control/Button_t.h"
+	"../control/ComboBox_t.h"
+	"../control/CheckList_t.h"
+	"../control/RadioBox_t.h"
+	"../control/TextBox_t.h"
+	"../control/TextField_t.h"
+	"../control/TextArea_t.h"
+	"../model/DSMonHoc_t_model.h"
+	"../model/DSLop_t_model.h"
+	"../model/DSSinhVien_t_model.h"
+	"../model/DSDiemThi_t_model.h"
+
+1616043961 f:\it\c++\ungdungthitracnghiem\view\gv_executive_form.h
+	"UIForm.h"
+	"../control/Panel_t.h"
+	"../control/MessageBox_t.h"
+	"../control/Button_t.h"
+	"../control/ComboBox_t.h"
+	"../control/CheckList_t.h"
+	"../control/RadioBox_t.h"
+	"../control/TextBox_t.h"
+	"../control/TextField_t.h"
+	"../control/TextArea_t.h"
+	"../control/Menu_t.h"
+	"../control/MenuBar_t.h"
+	"DSMonHocPanel.h"
+	"DSLopPanel.h"
+	"DSSinhVienPanel.h"
+	"DiemThiLopPanel.h"
+	"DiemThiSinhVienPanel.h"
+	"CauHoiThiPanel.h"
+

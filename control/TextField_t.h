@@ -8,63 +8,72 @@
 
 using namespace std;
 
-class TextField_t : public Rect_t {
+class TextField_t : public Rect_t
+{
 protected:
-	string text;
-  int length;
+    string text;
+    int length;
 
-  //0 base
-  int firstPosition;
+    //0 base
+    int firstPosition;
 
-  bool drawTextFlag;
-  bool outOfLengthMessageFlag;
+    bool drawTextFlag;
+    bool outOfLengthMessageFlag;
 
-  Vector<bool (*)(const string&)> checkInputValid;
+    Vector<bool (*)(const string&)> checkInputValid;
 
-  //use currentPosition from Rect_t
+    //use currentPosition from Rect_t
 public:
-	TextField_t();
-	TextField_t(int l, int t, int viewWidth);
-	TextField_t(int borderType, int l, int t, int viewWidth);
-	TextField_t(int borderType, int l, int t, int viewWidth, int length);
+    TextField_t();
+    TextField_t(int l, int t, int viewWidth);
+    TextField_t(int borderType, int l, int t, int viewWidth);
+    TextField_t(int borderType, int l, int t, int viewWidth, int length);
 
-	void clear();
+    void clear();
 
-	void setOutOfLenghtMessageFlag(bool flag) {
-    outOfLengthMessageFlag = flag;
-	}
+    void setOutOfLenghtMessageFlag(bool flag)
+    {
+        outOfLengthMessageFlag = flag;
+    }
 
-	void setValueLenght(int );
-  int getValueLength() { return length; }
+    void setValueLenght(int );
+    int getValueLength()
+    {
+        return length;
+    }
 
-	void setValue(const string& newVal);
-	string getValue() { return text; }
+    void setValue(const string& newVal);
+    string getValue()
+    {
+        return text;
+    }
 
-	void addCheckFunction(bool (*)(const string&));
+    void addCheckFunction(bool (*)(const string&));
 
-	virtual void setDefaultColor();
+    virtual void setDefaultColor();
 
-	virtual void setCoor(int l, int t);
+    virtual void setCoor(int l, int t);
 
-	virtual void draw(Graphics& g);
+    virtual void draw(Graphics& g);
 
-	virtual bool mouseClick(int l, int t, Graphics &g);
+    virtual bool mouseClick(int l, int t, Graphics &g);
 
-	virtual void keyPress(int keyCode, char ch, Graphics& g);
+    virtual void keyPress(int keyCode, char ch, Graphics& g);
 
-	COORD getCurrentPosition();
+    COORD getCurrentPosition();
 
-	bool IsCursorVisible();
+    bool IsCursorVisible();
 
-	TextField_t operator = (const TextField_t& o) {
-    Rect_t::operator=(o);
-    text = o.text;
-    length = o.length;
-    firstPosition = o.firstPosition;
-    checkInputValid = o.checkInputValid;
-    outOfLengthMessageFlag = o.outOfLengthMessageFlag;
-    return *this;
-	}
+    TextField_t operator = (const TextField_t& o)
+    {
+        Rect_t::operator=(o);
+        text = o.text;
+        length = o.length;
+        firstPosition = o.firstPosition;
+        checkInputValid = o.checkInputValid;
+        outOfLengthMessageFlag = o.outOfLengthMessageFlag;
+        return *this;
+    }
 };
 
 #endif
