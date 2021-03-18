@@ -98,8 +98,8 @@
 
 - Cơ chế quản lý file chưa hiệu quả.
 - Chưa hỗ trợ tiếng việt, utf8 encoding.
-- Chỉ hỗ trợ Linear Search, chưa hỗ trợ Fuzzy Search tại Table.
-- Cần cải thiện cách design sao cho chương trình chạy mượt hơn.
+- Chỉ hỗ trợ linear search, chưa hỗ trợ fuzzy search tại Table.
+- Cần cải thiện cách design.
 - Một số big bug chưa fix.
 
 ## Tham khảo
